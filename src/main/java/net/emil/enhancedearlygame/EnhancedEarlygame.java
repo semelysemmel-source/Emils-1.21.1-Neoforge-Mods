@@ -29,7 +29,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
+import net.emil.enhancedearlygame.registry.ModItems;
 
 @Mod(EnhancedEarlygame.MODID)
 public class EnhancedEarlygame {
@@ -43,13 +43,13 @@ public class EnhancedEarlygame {
 
         modEventBus.addListener(this::commonSetup);
 
-
         NeoForge.EVENT_BUS.register(this);
-
 
         modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        ModItems.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
