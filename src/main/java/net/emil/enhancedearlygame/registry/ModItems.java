@@ -6,6 +6,8 @@ import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.emil.enhancedearlygame.item.ModArmorMaterials;
+import net.minecraft.world.item.ArmorItem;
 
 public final class ModItems {
 
@@ -83,6 +85,54 @@ public final class ModItems {
                                             3,
                                             -2.4F
                                     )
+                            )
+                    )
+            );
+
+    public static final DeferredItem<ArmorItem> COPPER_HELMET =
+            ITEMS.register(
+                    "copper_helmet",
+                    () -> new ArmorItem(
+                            ModArmorMaterials.COPPER,
+                            ArmorItem.Type.HELMET,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.HELMET.getDurability(15)
+                            )
+                    )
+            );
+
+    public static final DeferredItem<ArmorItem> COPPER_CHESTPLATE =
+            ITEMS.register(
+                    "copper_chestplate",
+                    () -> new ArmorItem(
+                            ModArmorMaterials.COPPER,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(15)
+                            )
+                    )
+            );
+
+    public static final DeferredItem<ArmorItem> COPPER_LEGGINGS =
+            ITEMS.register(
+                    "copper_leggings",
+                    () -> new ArmorItem(
+                            ModArmorMaterials.COPPER,
+                            ArmorItem.Type.LEGGINGS,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.LEGGINGS.getDurability(15)
+                            )
+                    )
+            );
+
+    public static final DeferredItem<ArmorItem> COPPER_BOOTS =
+            ITEMS.register(
+                    "copper_boots",
+                    () -> new ArmorItem(
+                            ModArmorMaterials.COPPER,
+                            ArmorItem.Type.BOOTS,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.BOOTS.getDurability(15)
                             )
                     )
             );

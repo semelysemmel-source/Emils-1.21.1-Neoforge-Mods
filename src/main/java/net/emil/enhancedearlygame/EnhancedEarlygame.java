@@ -1,9 +1,8 @@
 package net.emil.enhancedearlygame;
 
+import net.emil.enhancedearlygame.item.ModArmorMaterials;
 import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -48,6 +47,8 @@ public class EnhancedEarlygame {
         modEventBus.addListener(this::addCreative);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        ModArmorMaterials.register(modEventBus);
 
         ModItems.register(modEventBus);
     }
