@@ -137,11 +137,95 @@ public final class ModItems {
                     )
             );
 
+
+
+// COPPER TOOL PARTS
+
+
+    public static final DeferredItem<Item> COPPER_PICKAXE_HEAD =
+            registerToolPart("copper_pickaxe_head");
+
+    public static final DeferredItem<Item> COPPER_AXE_HEAD =
+            registerToolPart("copper_axe_head");
+
+    public static final DeferredItem<Item> COPPER_SHOVEL_HEAD =
+            registerToolPart("copper_shovel_head");
+
+    public static final DeferredItem<Item> COPPER_HOE_HEAD =
+            registerToolPart("copper_hoe_head");
+
+    public static final DeferredItem<Item> COPPER_SWORD_BLADE =
+            registerToolPart("copper_sword_blade");
+
+
+// IRON TOOL PARTS
+
+
+    public static final DeferredItem<Item> IRON_PICKAXE_HEAD =
+            registerToolPart("iron_pickaxe_head");
+
+    public static final DeferredItem<Item> IRON_AXE_HEAD =
+            registerToolPart("iron_axe_head");
+
+    public static final DeferredItem<Item> IRON_SHOVEL_HEAD =
+            registerToolPart("iron_shovel_head");
+
+    public static final DeferredItem<Item> IRON_HOE_HEAD =
+            registerToolPart("iron_hoe_head");
+
+    public static final DeferredItem<Item> IRON_SWORD_BLADE =
+            registerToolPart("iron_sword_blade");
+
+
+// GOLD TOOL PARTS
+
+
+    public static final DeferredItem<Item> GOLD_PICKAXE_HEAD =
+            registerToolPart("gold_pickaxe_head");
+
+    public static final DeferredItem<Item> GOLD_AXE_HEAD =
+            registerToolPart("gold_axe_head");
+
+    public static final DeferredItem<Item> GOLD_SHOVEL_HEAD =
+            registerToolPart("gold_shovel_head");
+
+    public static final DeferredItem<Item> GOLD_HOE_HEAD =
+            registerToolPart("gold_hoe_head");
+
+    public static final DeferredItem<Item> GOLD_SWORD_BLADE =
+            registerToolPart("gold_sword_blade");
+
+
+// DIAMOND TOOL PARTS
+
+
+    public static final DeferredItem<Item> DIAMOND_PICKAXE_HEAD =
+            registerToolPart("diamond_pickaxe_head");
+
+    public static final DeferredItem<Item> DIAMOND_AXE_HEAD =
+            registerToolPart("diamond_axe_head");
+
+    public static final DeferredItem<Item> DIAMOND_SHOVEL_HEAD =
+            registerToolPart("diamond_shovel_head");
+
+    public static final DeferredItem<Item> DIAMOND_HOE_HEAD =
+            registerToolPart("diamond_hoe_head");
+
+    public static final DeferredItem<Item> DIAMOND_SWORD_BLADE =
+            registerToolPart("diamond_sword_blade");
+
+
     public static void register(IEventBus modEventBus) {
         ITEMS.register(modEventBus);
     }
 
-    private ModItems() {
+    private static DeferredItem<Item> registerToolPart(String name) {
+        return ITEMS.register(
+                name,
+                () -> new Item(new Item.Properties())
+        );
     }
 
+    private ModItems() {
+    }
 }

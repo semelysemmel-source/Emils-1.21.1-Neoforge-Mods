@@ -8,5 +8,30 @@
   "item.enhancedearlygame.copper_helmet": "Copper Helmet",
   "item.enhancedearlygame.copper_chestplate": "Copper Chestplate",
   "item.enhancedearlygame.copper_leggings": "Copper Leggings",
-  "item.enhancedearlygame.copper_boots": "Copper Boots"
+  "item.enhancedearlygame.copper_boots": "Copper Boots",
+
+  "item.enhancedearlygame.copper_pickaxe_head": "Copper Pickaxe Head",
+  "item.enhancedearlygame.copper_axe_head": "Copper Axe Head",
+  "item.enhancedearlygame.copper_shovel_head": "Copper Shovel Head",
+  "item.enhancedearlygame.copper_hoe_head": "Copper Hoe Head",
+  "item.enhancedearlygame.copper_sword_blade": "Copper Sword Blade",
+
+  "item.enhancedearlygame.iron_pickaxe_head": "Iron Pickaxe Head",
+  "item.enhancedearlygame.iron_axe_head": "Iron Axe Head",
+  "item.enhancedearlygame.iron_shovel_head": "Iron Shovel Head",
+  "item.enhancedearlygame.iron_hoe_head": "Iron Hoe Head",
+  "item.enhancedearlygame.iron_sword_blade": "Iron Sword Blade",
+
+  "item.enhancedearlygame.gold_pickaxe_head": "Gold Pickaxe Head",
+  "item.enhancedearlygame.gold_axe_head": "Gold Axe Head",
+  "item.enhancedearlygame.gold_shovel_head": "Gold Shovel Head",
+  "item.enhancedearlygame.gold_hoe_head": "Gold Hoe Head",
+  "item.enhancedearlygame.gold_sword_blade": "Gold Sword Blade",
+
+  "item.enhancedearlygame.diamond_pickaxe_head": "Diamond Pickaxe Head",
+  "item.enhancedearlygame.diamond_axe_head": "Diamond Axe Head",
+  "item.enhancedearlygame.diamond_shovel_head": "Diamond Shovel Head",
+  "item.enhancedearlygame.diamond_hoe_head": "Diamond Hoe Head",
+  "item.enhancedearlygame.diamond_sword_blade": "Diamond Sword Blade"
 }
+
