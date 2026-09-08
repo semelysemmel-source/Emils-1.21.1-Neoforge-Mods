@@ -30,6 +30,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.emil.enhancedearlygame.registry.ModItems;
 import net.emil.enhancedearlygame.registry.ModBlocks;
+import net.emil.enhancedearlygame.registry.ModMenus;
 
 @Mod(EnhancedEarlygame.MODID)
 public class EnhancedEarlygame {
@@ -54,6 +55,9 @@ public class EnhancedEarlygame {
         ModBlocks.register(modEventBus);
 
         ModItems.register(modEventBus);
+
+        ModMenus.register(modEventBus);
+
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
