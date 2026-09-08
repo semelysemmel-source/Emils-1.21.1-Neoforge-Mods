@@ -23,7 +23,7 @@ public enum ForgingSelection {
         return buttonId;
     }
 
-    public int getMaterialCost() {
+    public int MaterialCost() {
         return materialCost;
     }
 
