@@ -9,6 +9,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.emil.enhancedearlygame.item.ModArmorMaterials;
 import net.minecraft.world.item.ArmorItem;
 
+import java.util.function.Supplier;
+
 public final class ModItems {
 
     public static final DeferredRegister.Items ITEMS =
@@ -213,6 +215,19 @@ public final class ModItems {
 
     public static final DeferredItem<Item> DIAMOND_SWORD_BLADE =
             registerToolPart("diamond_sword_blade");
+
+
+    public static final Supplier<Item> SMITHING_POWDER =
+            ITEMS.registerSimpleItem(
+                    "smithing_powder",
+                    new Item.Properties()
+            );
+
+    public static final Supplier<Item> BLAZED_SMITHING_POWDER =
+            ITEMS.registerSimpleItem(
+                    "blazed_smithing_powder",
+                    new Item.Properties()
+            );
 
 
     public static void register(IEventBus modEventBus) {

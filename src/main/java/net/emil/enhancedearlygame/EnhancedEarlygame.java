@@ -58,6 +58,58 @@ public class EnhancedEarlygame {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+
+            event.accept(ModItems.COPPER_PICKAXE.get());
+            event.accept(ModItems.COPPER_AXE.get());
+            event.accept(ModItems.COPPER_SHOVEL.get());
+            event.accept(ModItems.COPPER_HOE.get());
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+
+            event.accept(ModItems.COPPER_SWORD.get());
+            event.accept(ModItems.COPPER_HELMET.get());
+            event.accept(ModItems.COPPER_CHESTPLATE.get());
+            event.accept(ModItems.COPPER_LEGGINGS.get());
+            event.accept(ModItems.COPPER_BOOTS.get());
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+
+            // Copper
+            event.accept(ModItems.COPPER_PICKAXE_HEAD.get());
+            event.accept(ModItems.COPPER_AXE_HEAD.get());
+            event.accept(ModItems.COPPER_SHOVEL_HEAD.get());
+            event.accept(ModItems.COPPER_HOE_HEAD.get());
+            event.accept(ModItems.COPPER_SWORD_BLADE.get());
+
+            // Iron
+            event.accept(ModItems.IRON_PICKAXE_HEAD.get());
+            event.accept(ModItems.IRON_AXE_HEAD.get());
+            event.accept(ModItems.IRON_SHOVEL_HEAD.get());
+            event.accept(ModItems.IRON_HOE_HEAD.get());
+            event.accept(ModItems.IRON_SWORD_BLADE.get());
+
+            // Gold
+            event.accept(ModItems.GOLD_PICKAXE_HEAD.get());
+            event.accept(ModItems.GOLD_AXE_HEAD.get());
+            event.accept(ModItems.GOLD_SHOVEL_HEAD.get());
+            event.accept(ModItems.GOLD_HOE_HEAD.get());
+            event.accept(ModItems.GOLD_SWORD_BLADE.get());
+
+            // Diamond
+            event.accept(ModItems.DIAMOND_PICKAXE_HEAD.get());
+            event.accept(ModItems.DIAMOND_AXE_HEAD.get());
+            event.accept(ModItems.DIAMOND_SHOVEL_HEAD.get());
+            event.accept(ModItems.DIAMOND_HOE_HEAD.get());
+            event.accept(ModItems.DIAMOND_SWORD_BLADE.get());
+
+            // Smithing Powders
+            event.accept(ModItems.SMITHING_POWDER.get());
+            event.accept(ModItems.BLAZED_SMITHING_POWDER.get());
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
