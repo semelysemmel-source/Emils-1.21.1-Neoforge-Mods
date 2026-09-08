@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "AAA",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stone_slab"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "result": {
+    "id": "enhancedearlygame:stone_anvil",
+    "count": 1
+  }
+}

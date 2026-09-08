@@ -29,6 +29,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.emil.enhancedearlygame.registry.ModItems;
+import net.emil.enhancedearlygame.registry.ModBlocks;
 
 @Mod(EnhancedEarlygame.MODID)
 public class EnhancedEarlygame {
@@ -49,6 +50,8 @@ public class EnhancedEarlygame {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         ModArmorMaterials.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         ModItems.register(modEventBus);
     }
@@ -108,6 +111,11 @@ public class EnhancedEarlygame {
             // Smithing Powders
             event.accept(ModItems.SMITHING_POWDER.get());
             event.accept(ModItems.BLAZED_SMITHING_POWDER.get());
+
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModItems.STONE_ANVIL.get());
         }
 
     }

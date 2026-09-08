@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.emil.enhancedearlygame.item.ModArmorMaterials;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.BlockItem;
 
 import java.util.function.Supplier;
 
@@ -228,6 +229,11 @@ public final class ModItems {
                     "blazed_smithing_powder",
                     new Item.Properties()
             );
+
+
+    public static final DeferredItem<BlockItem> STONE_ANVIL =
+            ITEMS.registerSimpleBlockItem(ModBlocks.STONE_ANVIL);
+
 
 
     public static void register(IEventBus modEventBus) {
