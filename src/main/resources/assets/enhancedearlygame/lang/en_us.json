@@ -36,7 +36,10 @@
 
   "item.enhancedearlygame.smithing_powder": "Smithing Powder",
   "item.enhancedearlygame.blazed_smithing_powder": "Blazed Smithing Powder",
-  "block.enhancedearlygame.stone_anvil": "Stone Anvil"
+  "block.enhancedearlygame.stone_anvil": "Stone Anvil",
+
+  "container.enhancedearlygame.repair_and_forge": "Repair & Forge",
+  "gui.enhancedearlygame.forging": "Forging"
 
 }
 

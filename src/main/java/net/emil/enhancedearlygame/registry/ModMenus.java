@@ -21,7 +21,7 @@ public final class ModMenus {
             MenuType<StoneAnvilMenu>
             > STONE_ANVIL =
             MENUS.register(
-                    "Stone_Anvil",
+                    "stone_anvil",
                     () -> new MenuType<>(
                             StoneAnvilMenu::new,
                             FeatureFlags.DEFAULT_FLAGS

@@ -46,9 +46,9 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
     @Override
     protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
         return ItemCombinerMenuSlotDefinition.create()
-                .withSlot(0, 27, 47, stack -> true)
-                .withSlot(1, 76, 47, stack -> true)
-                .withResultSlot(2, 134, 47)
+                .withSlot(0, 16, 50, stack -> true)
+                .withSlot(1, 65, 50, stack -> true)
+                .withResultSlot(2, 123, 50)
                 .build();
     }
 
@@ -70,14 +70,6 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
         this.createResult();
         return true;
     }
-
-
-    @Override
-    protected void onTake(Player player, ItemStack stack) {
-        this.access.execute((level,pos)->
-                level.levelEvent(1030,pos,0));
-    }
-
 
     @Override
     public void createResult() {
@@ -242,6 +234,52 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
         this.broadcastChanges();
 
         return true;
+    }
+
+    @Override
+    protected void onTake(Player player, ItemStack stack) {
+        AnvilOperation finishedOperation = this.operation;
+
+        int finishedMaterialCost = this.materialToConsume;
+        int finishedPowderCost = this.powderToConsume;
+        int finishedRepairMaterialCost =
+                this.repairMaterialsToConsume;
+
+        switch (finishedOperation) {
+            case FORGING -> {
+                this.inputSlots.removeItem(
+                        0,
+                        finishedMaterialCost
+                );
+
+                this.inputSlots.removeItem(
+                        1,
+                        finishedPowderCost
+                );
+            }
+
+            case MATERIAL_REPAIR -> {
+                this.inputSlots.removeItem(0, 1);
+
+                this.inputSlots.removeItem(
+                        1,
+                        finishedRepairMaterialCost
+                );
+            }
+
+            case ITEM_REPAIR -> {
+                this.inputSlots.removeItem(0, 1);
+                this.inputSlots.removeItem(1, 1);
+            }
+
+            default -> {
+            }
+        }
+
+        this.access.execute(
+                (level, pos) ->
+                        level.levelEvent(1030, pos, 0)
+        );
     }
 
     @Override
