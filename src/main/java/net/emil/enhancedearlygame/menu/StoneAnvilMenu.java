@@ -20,7 +20,7 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
 
     private int materialToConsume;
     private int powderToConsume;
-    private int repairMaterialsToConsume
+    private int repairMaterialsToConsume;
 
     public StoneAnvilMenu(int containerId, Inventory inventory) {
         this(
@@ -71,20 +71,13 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
         return true;
     }
 
-    @Override
-    protected boolean mayPickup(Player player, boolean hasStack) {
-        return false;
-    }
 
     @Override
     protected void onTake(Player player, ItemStack stack) {
-
+        this.access.execute((level,pos)->
+                level.levelEvent(1030,pos,0));
     }
 
-    @Override
-    protected boolean isValidBlock(BlockState state) {
-        return false;
-    }
 
     @Override
     public void createResult() {
@@ -259,8 +252,7 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
         return hasResult && this.operation != AnvilOperation.NONE;
     }
 
-    this.access.execute((level,pos)->
-            level.levelEvent(1030,pos,0)
-            );
+
+
 
 }
