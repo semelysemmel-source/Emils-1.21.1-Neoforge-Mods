@@ -185,5 +185,13 @@ public class StoneAnvilScreen
                 mouseX,
                 mouseY
         );
+
+        if (this.forgingSelectionWidget != null) {
+            this.forgingSelectionWidget.renderSelectionTooltip(
+                    graphics,
+                    mouseX,
+                    mouseY
+            );
+        }
     }
 }

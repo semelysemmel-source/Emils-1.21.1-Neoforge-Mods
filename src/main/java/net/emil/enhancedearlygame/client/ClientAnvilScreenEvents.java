@@ -11,6 +11,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ScreenEvent;
+import net.minecraft.network.chat.Component;
 
 @EventBusSubscriber(
         modid = EnhancedEarlygame.MODID,
@@ -78,7 +79,9 @@ public final class ClientAnvilScreenEvents {
                 new EnhancedAnvilScreen(
                         enhancedMenu,
                         inventory,
-                        vanillaScreen.getTitle()
+                        Component.translatable(
+                                "container.enhancedearlygame.repair_and_forge"
+                        )
                 )
         );
     }

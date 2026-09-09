@@ -10,7 +10,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import org.jetbrains.annotations.Nullable;
+import net.emil.enhancedearlygame.forging.ForgingMaterial;
+import net.minecraft.ChatFormatting;
 
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 import java.util.Map;
 
 public class ForgingSelectionWidget extends AbstractWidget {
@@ -285,6 +290,66 @@ public class ForgingSelectionWidget extends AbstractWidget {
                 buttonX + BUTTON_SIZE,
                 buttonY + BUTTON_SIZE,
                 0x55000000
+        );
+    }
+
+    public void renderSelectionTooltip(
+            GuiGraphics graphics,
+            int mouseX,
+            int mouseY
+    ) {
+        if (!this.expanded) {
+            return;
+        }
+
+        ForgingSelection hoveredSelection =
+                this.findSelectionAt(mouseX, mouseY);
+
+        if (hoveredSelection == null) {
+            return;
+        }
+
+        ForgingMaterial material =
+                ForgingMaterial.fromStack(
+                        this.menu.getSlot(0).getItem()
+                );
+
+        Component powderCostText;
+
+        if (material == null) {
+            powderCostText =
+                    Component.translatable(
+                            "gui.enhancedearlygame.normal_smithing_powder_cost_unknown",
+                            1,
+                            2
+                    );
+        } else {
+            powderCostText =
+                    Component.translatable(
+                            "gui.enhancedearlygame.normal_smithing_powder_cost",
+                            material.normalPowderCost()
+                    );
+        }
+
+        List<Component> tooltip = List.of(
+                Component.translatable(
+                        "gui.enhancedearlygame."
+                                + hoveredSelection.name()
+                                .toLowerCase(Locale.ROOT)
+                ),
+                Component.translatable(
+                        "gui.enhancedearlygame.material_cost",
+                        hoveredSelection.MaterialCost()
+                ).withStyle(ChatFormatting.GRAY),
+                ((net.minecraft.network.chat.MutableComponent) powderCostText).withStyle(ChatFormatting.GRAY)
+        );
+
+        graphics.renderTooltip(
+                Minecraft.getInstance().font,
+                tooltip,
+                Optional.empty(),
+                mouseX,
+                mouseY
         );
     }
 

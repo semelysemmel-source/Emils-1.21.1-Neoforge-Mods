@@ -102,8 +102,8 @@ public class EnhancedAnvilScreen
          */
         this.name = new EditBox(
                 this.font,
-                screenX + 62,
-                screenY + 24,
+                screenX + 14,
+                screenY + 25,
                 103,
                 12,
                 Component.translatable(
@@ -348,8 +348,8 @@ public class EnhancedAnvilScreen
 
         graphics.blitSprite(
                 textFieldTexture,
-                this.leftPos + 59,
-                this.topPos + 20,
+                this.leftPos + 11,
+                this.topPos + 21,
                 110,
                 16
         );
@@ -433,5 +433,26 @@ public class EnhancedAnvilScreen
         );
 
         this.setFocused(this.name);
+    }
+
+    @Override
+    protected void renderTooltip(
+            GuiGraphics graphics,
+            int mouseX,
+            int mouseY
+    ) {
+        super.renderTooltip(
+                graphics,
+                mouseX,
+                mouseY
+        );
+
+        if (this.forgingSelectionWidget != null) {
+            this.forgingSelectionWidget.renderSelectionTooltip(
+                    graphics,
+                    mouseX,
+                    mouseY
+            );
+        }
     }
 }
