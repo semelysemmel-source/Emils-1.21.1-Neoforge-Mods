@@ -39,7 +39,16 @@
   "block.enhancedearlygame.stone_anvil": "Stone Anvil",
 
   "container.enhancedearlygame.repair_and_forge": "Repair & Forge",
-  "gui.enhancedearlygame.forging": "Forging"
+  "gui.enhancedearlygame.forging": "Forging",
+  "gui.enhancedearlygame.pickaxe_head": "Pickaxe Head",
+  "gui.enhancedearlygame.axe_head": "Axe Head",
+  "gui.enhancedearlygame.shovel_head": "Shovel Head",
+  "gui.enhancedearlygame.sword_blade": "Sword Blade",
+  "gui.enhancedearlygame.hoe_head": "Hoe Head",
+  "gui.enhancedearlygame.helmet": "Helmet",
+  "gui.enhancedearlygame.chestplate": "Chestplate",
+  "gui.enhancedearlygame.leggings": "Leggings",
+  "gui.enhancedearlygame.boots": "Boots"
 
 }
 
