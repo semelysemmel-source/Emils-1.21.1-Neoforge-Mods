@@ -11,6 +11,8 @@ public enum ForgingSelection {
     LEGGINGS(7, 7),
     BOOTS(8, 4);
 
+    public static final int CLEAR_SELECTION_BUTTON_ID = 9;
+
     private final int buttonId;
     private final int materialCost;
 
@@ -38,3 +40,4 @@ public enum ForgingSelection {
         return null;
     }
 }
+

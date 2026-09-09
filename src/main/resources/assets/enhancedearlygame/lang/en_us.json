@@ -50,9 +50,9 @@
   "gui.enhancedearlygame.leggings": "Leggings",
   "gui.enhancedearlygame.boots": "Boots",
 
-  "gui.enhancedearlygame.material_cost": "Cost %s Ingots",
-  "gui.enhancedearlygame.normal_smithing_powder_cost": "Smithing Powder %s",
-  "gui.enhancedearlygame.normal_smithing_powder_cost_unknown": "Smithing Powder %s (with Diamond %s)"
+  "gui.enhancedearlygame.material_cost": "%s Ingots",
+  "gui.enhancedearlygame.normal_smithing_powder_cost": "%s Smithing Powder",
+  "gui.enhancedearlygame.normal_smithing_powder_cost_unknown": "%s Smithing Powder"
 
 }
 

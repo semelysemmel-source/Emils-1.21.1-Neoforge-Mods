@@ -58,16 +58,34 @@ public class StoneAnvilMenu extends ItemCombinerMenu {
     }
 
     @Override
-    public boolean clickMenuButton(Player player, int id) {
-        ForgingSelection clicked =
-                ForgingSelection.byButtonId(id);
+    public boolean clickMenuButton(
+            Player player,
+            int buttonId
+    ) {
+        /*
+         * Button-ID 9 bedeutet:
+         * Forging-Auswahl zurücksetzen.
+         */
+        if (buttonId
+                == ForgingSelection.CLEAR_SELECTION_BUTTON_ID) {
+            this.selection = null;
+            this.createResult();
+            return true;
+        }
 
-        if (clicked == null) {
+        /*
+         * Normale Auswahl einer Forging-Option.
+         */
+        ForgingSelection clickedSelection =
+                ForgingSelection.byButtonId(buttonId);
+
+        if (clickedSelection == null) {
             return false;
         }
 
-        this.selection = clicked;
+        this.selection = clickedSelection;
         this.createResult();
+
         return true;
     }
 

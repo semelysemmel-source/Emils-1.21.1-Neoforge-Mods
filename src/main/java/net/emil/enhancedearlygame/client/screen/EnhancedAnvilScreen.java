@@ -399,8 +399,8 @@ public class EnhancedAnvilScreen
         if (hasInput && hasNoResult) {
             graphics.blitSprite(
                     ERROR_SPRITE,
-                    screenX + 99,
-                    screenY + 45,
+                    screenX + 88,
+                    screenY + 48,
                     28,
                     21
             );

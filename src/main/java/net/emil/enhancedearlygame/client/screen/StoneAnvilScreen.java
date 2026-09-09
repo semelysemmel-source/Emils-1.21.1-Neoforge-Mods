@@ -124,9 +124,10 @@ public class StoneAnvilScreen
          * Stellt die ausgewählte Schmiedeoption wieder her, falls init()
          * durch eine Änderung der Fenstergröße erneut ausgeführt wurde.
          */
-        this.forgingSelectionWidget.setSelectedSelection(
-                previousSelection
-        );
+        this.forgingSelectionWidget
+                .setSelectedSelection(
+                        previousSelection
+                );
     }
 
     /*

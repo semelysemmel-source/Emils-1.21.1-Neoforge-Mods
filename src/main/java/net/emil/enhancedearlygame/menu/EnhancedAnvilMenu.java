@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AnvilMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.ItemCombinerMenuSlotDefinition;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -64,6 +65,29 @@ public class EnhancedAnvilMenu extends AnvilMenu {
         );
     }
 
+    @Override
+    protected ItemCombinerMenuSlotDefinition createInputSlotDefinitions() {
+        return ItemCombinerMenuSlotDefinition.create()
+                .withSlot(
+                        0,
+                        16,
+                        50,
+                        stack -> true
+                )
+                .withSlot(
+                        1,
+                        65,
+                        50,
+                        stack -> true
+                )
+                .withResultSlot(
+                        2,
+                        123,
+                        50
+                )
+                .build();
+    }
+
     /*
      * Wird aufgerufen, wenn der Spieler im Forging-Widget
      * eine der neun Optionen auswählt.
@@ -73,6 +97,14 @@ public class EnhancedAnvilMenu extends AnvilMenu {
             Player player,
             int buttonId
     ) {
+        if (buttonId
+                == ForgingSelection.CLEAR_SELECTION_BUTTON_ID) {
+            this.selection = null;
+            this.createResult();
+            return true;
+        }
+
+
         ForgingSelection clickedSelection =
                 ForgingSelection.byButtonId(buttonId);
 

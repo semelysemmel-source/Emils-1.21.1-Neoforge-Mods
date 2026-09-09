@@ -367,13 +367,15 @@ public class ForgingSelectionWidget extends AbstractWidget {
             double mouseY,
             int mouseButton
     ) {
-        if (!this.visible || !this.active || mouseButton != 0) {
+        if (!this.visible
+                || !this.active
+                || mouseButton != 0) {
             return false;
         }
 
         /*
-         * Klick auf den Hauptbutton:
-         * Auswahlmenü öffnen oder schließen.
+         * Der Hauptbutton öffnet oder schließt nur das Dropdown.
+         * Er verändert die ausgewählte Option nicht.
          */
         if (isInsideButton(
                 mouseX,
@@ -387,16 +389,13 @@ public class ForgingSelectionWidget extends AbstractWidget {
         }
 
         /*
-         * Wenn das Raster geschlossen ist, können keine Optionen
-         * angeklickt werden.
+         * Optionen können nur angeklickt werden,
+         * solange das Dropdown geöffnet ist.
          */
         if (!this.expanded) {
             return false;
         }
 
-        /*
-         * Prüft, ob eine der neun Forging-Optionen angeklickt wurde.
-         */
         ForgingSelection clickedSelection =
                 findSelectionAt(mouseX, mouseY);
 
@@ -405,29 +404,52 @@ public class ForgingSelectionWidget extends AbstractWidget {
         }
 
         /*
-         * Die Auswahl wird lokal gespeichert.
-         * Dadurch erscheint das gewählte Icon auf dem Hauptbutton.
+         * Wichtig: Der Vergleich findet statt, bevor
+         * selectedSelection verändert wird.
          */
-        this.selectedSelection = clickedSelection;
+        boolean clearSelection =
+                clickedSelection == this.selectedSelection;
+
+        if (clearSelection) {
+            /*
+             * Dieselbe Option wurde erneut angeklickt:
+             * Auswahl entfernen und Default-Icon anzeigen.
+             */
+            this.selectedSelection = null;
+        } else {
+            /*
+             * Neue Option auswählen:
+             * Das entsprechende Icon wird anschließend
+             * auf dem Hauptbutton angezeigt.
+             */
+            this.selectedSelection = clickedSelection;
+        }
+
         this.expanded = false;
 
         /*
-         * Informiert das serverseitige Menü über die neue Auswahl.
-         *
-         * Dort wird clickMenuButton(...) aufgerufen.
+         * Die neue Auswahl beziehungsweise das Abwählen
+         * an das serverseitige Menü senden.
          */
         Minecraft minecraft = Minecraft.getInstance();
 
         if (minecraft.gameMode != null) {
+            int buttonId =
+                    clearSelection
+                            ? ForgingSelection.CLEAR_SELECTION_BUTTON_ID
+                            : clickedSelection.buttonId();
+
             minecraft.gameMode.handleInventoryButtonClick(
                     this.menu.containerId,
-                    clickedSelection.buttonId()
+                    buttonId
             );
         }
 
         playClickSound();
         return true;
     }
+
+
 
     /*
      * Sucht die ForgingSelection, deren Button unter dem Mauszeiger liegt.
